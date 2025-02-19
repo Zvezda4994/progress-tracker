@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #e0f7fa;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 400px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    padding: 8px;
+    font-size: 16px;
+    margin: 10px;
+    width: 150px;
+    text-align: center;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.progress-container {
+    position: relative;
+    width: 100px;
+    height: 600px;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: visible;
+    border: 3px solid black;
+    display: flex;
+    align-items: flex-end;
+}
+
+/* Gradient from deep-sea to Everest */
+.progress-bar {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, 
+        #000022 0%,     /* Deep dark ocean (bottom) */
+        #003366 30%,    /* Dark blue trench */
+        #80dfff 50%,    /* Sea level */
+        #a9a9a9 75%,    /* Rocky Everest */
+        #ffffff 100%    /* Snowy Everest peak */
+    );
+    position: absolute;
+}
+
+.progress {
+    width: 15px;  /* Make it a little bigger */
+    height: 5px;  /* Small horizontal notch */
+    background: gold;
+    position: absolute;
+    left: -7px;  /* Move it inside the progress container */
+    bottom: 0;
+    transition: bottom 0.3s ease-in-out;
+    z-index: 10;  /* Ensure it appears on top */
+}
+
+
+
+
+/* Labels for different heights */
+.labels {
+    position: absolute;
+    left: 110px;
+    width: 200px;
+    font-size: 14px;
+    text-align: left;
+    top: 0;  /* Ensure labels stay aligned to the progress container */
+    height: 100%; /* Make sure it stretches over the full progress bar */
+}
+
+.label {
+    position: absolute;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+/* Explicitly position labels inside the progress bar */
+.trench { bottom: 0; }      /* Mariana Trench */
+.sea-level { bottom: 50%; transform: translateY(50%); }  /* Sea Level */
+.everest { top: 0; }        /* Everest Peak */

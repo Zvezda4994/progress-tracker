@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariana Trench to Everest Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Depth to Peak Progress Tracker</h1>
+        <p id="current-progress">Current Progress: -11000m</p>
+        
+        <input type="number" id="climb-input" placeholder="Enter meters">
+        <button onclick="changeProgress()">Climb/Descend</button>
+
+        <div class="progress-container">
+            <div class="labels">
+                <div class="label trench">-11,000m (Mariana Trench)</div>
+                <div class="label sea-level">0m (Sea Level)</div>
+                <div class="label everest">8,849m (Mount Everest)</div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
