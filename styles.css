@@ -28,7 +28,7 @@ body {
 .progress-container {
     position: relative;
     width: 100px;
-    height: 600px;
+    height: 800px; /* Change this to whatever height you want */
     border-radius: 10px;
     overflow: visible;
     border: 3px solid black;
@@ -51,11 +51,11 @@ body {
 
 /* Gold Progress Notch */
 .progress {
-    width: 10px;
-    height: 5px;
+    width: 25px;
+    height: 4px;
     background: gold;
     position: absolute;
-    left: -7px;
+    left: -15px;
     bottom: 0;
     transition: bottom 0.3s ease-in-out;
     z-index: 10;
@@ -90,42 +90,38 @@ body {
 .side-images {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Everest goes up, Trench goes down */
-    height: 600px; /* Matches progress bar */
+    justify-content: space-between; /* Everest up, Trench down */
+    height: 800px; /* Ensure it explicitly matches the progress bar */
     width: 140px;
-    overflow: hidden; /* Ensures no overlap */
 }
 
-/* Everest should only take the top half */
+/* Everest should fill the top half */
 .everest-wrapper {
     width: 100%;
-    height: 50%; /* EXACTLY half */
-    overflow: hidden; /* Prevents it from going into the trench */
+    height: 50%; /* Now correctly takes half */
+    overflow: hidden;
 }
 
-/* Everest Image */
 .everest-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top; /* Ensures Everest starts from 0m */
+    object-position: top;
 }
 
-/* Mariana Trench should only take the bottom half */
+/* Mariana Trench should fill the bottom half */
 .trench-wrapper {
     width: 100%;
-    height: 50%; /* EXACTLY half */
-    overflow: hidden; /* Prevents trench from pushing up */
+    height: 50%; /* Now correctly takes half */
+    overflow: hidden;
 }
 
-/* Trench Image */
 .trench-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: bottom; /* Ensures trench starts from 0m */
+    object-position: bottom;
 }
-
 
 
 
