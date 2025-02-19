@@ -15,34 +15,20 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-input {
-    padding: 8px;
-    font-size: 16px;
-    margin: 10px;
-    width: 150px;
-    text-align: center;
+/* Layout for progress bar and both images */
+.visual-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
 }
 
-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
+/* Progress Bar */
 .progress-container {
     position: relative;
     width: 100px;
     height: 600px;
-    margin: 20px auto;
     border-radius: 10px;
     overflow: visible;
     border: 3px solid black;
@@ -50,43 +36,40 @@ button:hover {
     align-items: flex-end;
 }
 
-/* Gradient from deep-sea to Everest */
 .progress-bar {
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, 
-        #000022 0%,     /* Deep dark ocean (bottom) */
-        #003366 30%,    /* Dark blue trench */
-        #80dfff 50%,    /* Sea level */
-        #a9a9a9 75%,    /* Rocky Everest */
-        #ffffff 100%    /* Snowy Everest peak */
+    background: linear-gradient(to top,
+        #000033 0%,   /* Deep Trench */
+        #003366 30%,  /* Mid Ocean */
+        #80dfff 50%,  /* Sea Level */
+        #a9a9a9 75%,  /* Rocky Everest */
+        #ffffff 100%  /* Snowy Everest Peak */
     );
     position: absolute;
 }
 
+/* Gold Progress Notch */
 .progress {
-    width: 15px;  /* Make it a little bigger */
-    height: 5px;  /* Small horizontal notch */
+    width: 10px;
+    height: 5px;
     background: gold;
     position: absolute;
-    left: -7px;  /* Move it inside the progress container */
+    left: -7px;
     bottom: 0;
     transition: bottom 0.3s ease-in-out;
-    z-index: 10;  /* Ensure it appears on top */
+    z-index: 10;
 }
 
-
-
-
-/* Labels for different heights */
+/* Labels */
 .labels {
     position: absolute;
     left: 110px;
     width: 200px;
     font-size: 14px;
     text-align: left;
-    top: 0;  /* Ensure labels stay aligned to the progress container */
-    height: 100%; /* Make sure it stretches over the full progress bar */
+    top: 0;
+    height: 100%;
 }
 
 .label {
@@ -99,6 +82,52 @@ button:hover {
 }
 
 /* Explicitly position labels inside the progress bar */
-.trench { bottom: 0; }      /* Mariana Trench */
-.sea-level { bottom: 50%; transform: translateY(50%); }  /* Sea Level */
-.everest { top: 0; }        /* Everest Peak */
+.trench { bottom: 0; }
+.sea-level { bottom: 50%; transform: translateY(50%); }
+.everest { top: 0; }
+
+/* Everest & Mariana Trench Image Containers */
+.side-images {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Everest goes up, Trench goes down */
+    height: 600px; /* Matches progress bar */
+    width: 140px;
+    overflow: hidden; /* Ensures no overlap */
+}
+
+/* Everest should only take the top half */
+.everest-wrapper {
+    width: 100%;
+    height: 50%; /* EXACTLY half */
+    overflow: hidden; /* Prevents it from going into the trench */
+}
+
+/* Everest Image */
+.everest-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top; /* Ensures Everest starts from 0m */
+}
+
+/* Mariana Trench should only take the bottom half */
+.trench-wrapper {
+    width: 100%;
+    height: 50%; /* EXACTLY half */
+    overflow: hidden; /* Prevents trench from pushing up */
+}
+
+/* Trench Image */
+.trench-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom; /* Ensures trench starts from 0m */
+}
+
+
+
+
+
+

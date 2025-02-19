@@ -15,14 +15,26 @@
         <input type="number" id="climb-input" placeholder="Enter meters">
         <button onclick="changeProgress()">Climb/Descend</button>
 
-        <div class="progress-container">
-            <div class="labels">
-                <div class="label trench">-11,000m (Mariana Trench)</div>
-                <div class="label sea-level">0m (Sea Level)</div>
-                <div class="label everest">8,849m (Mount Everest)</div>
+        <div class="visual-container">
+            <div class="progress-container">
+                <div class="labels">
+                    <div class="label trench">-11,000m (Mariana Trench)</div>
+                    <div class="label sea-level">0m (Sea Level)</div>
+                    <div class="label everest">8,849m (Mount Everest)</div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
             </div>
-            <div class="progress-bar">
-                <div class="progress" id="progress"></div>
+
+            <!-- Image container (Separate Everest & Trench) -->
+            <div class="side-images">
+                <div class="everest-wrapper">
+                    <img src="everest.jpg" alt="Mount Everest" class="everest-img">
+                </div>
+                <div class="trench-wrapper">
+                    <img src="mariana-trench.jpg" alt="Mariana Trench" class="trench-img">
+                </div>
             </div>
         </div>
     </div>
